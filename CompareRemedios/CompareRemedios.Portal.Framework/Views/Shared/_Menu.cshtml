@@ -1,0 +1,209 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container menu-jequiti">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @*<a href="@Url.Action("Index", "Inicio", new { Area = "Administrativo" })">
+                    <img class="navbar-brand" src="@Url.Content("~/Images/logo_jequiti_claro.png")" />
+                </a>*@
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+                <li class="menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-th"></span> Módulos<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            @Html.ActionLink("Produção (Picking)", "Vinculo", "Vinculo", new { Area = "Producao" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Distribuição", "Index", "inicio", new { Area = "Distribuicao" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Vendas 0800", "Index", "Inicio", new { Area = "Venda0800" }, null)
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> Cliente<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            @Html.ActionLink("Novo", "Cadastrar", "Cliente", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Pesquisar", "Index", "Cliente", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Black List", "Pesquisar", "BlackList", new { Area = "Administrativo" }, null)
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-file"></span> Carnês<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Pesquisa", "Index", "Carne", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Séries", "Series", "Carne", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Incinerar", "Incinerar", "Carne", new { Area = "Administrativo" }, null)
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-th-list"></span> BI<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Pedidos X Carnê", "PedidosXCarne", "Bi",
+                                new { Area = "Administrativo" }, null)
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-retweet"></span> Financeiro<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Arquivo bancário", "ImportarArquivoBancario", "Financeiro",
+                                new { Area = "Administrativo" }, null)
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-wrench"></span> Configurações<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            @Html.ActionLink("Usuário", "Index", "Usuario", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Parâmetros", "Index", "Parametros", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Motivos Cancelamento", "MotivoCancelamento", "MotivosCancelamento", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Motivos Black List", "MotivoBlackList", "MotivosBlackList", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Prazo Entrega", "Index", "PrazoEntrega", new { Area = "Administrativo" }, null)
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-list-alt"></span> Relatórios<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Meus Relatórios", "MeusRelatorios", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Carnês Ativos", "CarnesAtivos", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Falha de Pagamento", "FalhaPagamento", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Conciliação CNAB", "ConciliacaoCNAB", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Histórico Importação CNAB", "HistoricoImportacaoCNAB", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Integracoes", "Integracoes", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Carnês Suspeitos", "CarnesSuspeitos", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Colheita", "Colheita", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Carnês Incinerados", "CarnesIncinerados", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Carnês Expirados", "CarnesExpirados", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Solicitação Carnê", "SolicitacaoCarne", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+                        <li>
+                            @Html.ActionLink("Solicitação Correios", "SolicitacaoCorreios", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+
+                        <li>
+                            @Html.ActionLink("Clientes Black List", "ClientesBlackList", "Relatorio", new { Area = "Administrativo" }, null)
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="menu-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
+                       aria-expanded="false" data-toggle="dropdown">
+                        @User.Identity.Name.ToUpper()<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu text-right xs-text-left">
+                        <li>
+                            @Html.ActionLink("Sair", "Logoff", "Login", new { Area = "" }, htmlAttributes:
+                                new { id = "logoffLink" })
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

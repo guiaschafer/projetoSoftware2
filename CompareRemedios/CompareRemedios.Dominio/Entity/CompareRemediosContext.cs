@@ -12,7 +12,7 @@ namespace CompareRemedios.Dominio.Entity
 
         public CompareRemediosContext() 
         {
-            this.MigrationsDirectory = "DirOne\\DirTwo";
+     
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,6 +30,10 @@ namespace CompareRemedios.Dominio.Entity
             //optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=FarmaciaDB;Trusted_Connection=True;");
           
             modelBuilder.ApplyConfiguration(new FarmarciaMap());
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new PrecoMap());
+            modelBuilder.ApplyConfiguration(new ProdutoMap());
+
 
         }
     }

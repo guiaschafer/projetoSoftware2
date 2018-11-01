@@ -3,12 +3,12 @@
     ViewBag.Title = "Portal Jequiti";
 }
 
-
-    @Styles.Render("~/Styles/Inicio")
-
-
-    @Scripts.Render("~/Scripts/Inicio")
-
+@section styles{
+    @Styles.Render("~/bundles/Styles/Inicio")
+}   
+@section scripts {
+    @Scripts.Render("~/bundles/Scripts/Inicio")
+}
 <nav>
     <div class="row topo-m topo-inicio">
         <div class="col-sm-8 col-sm-offset-2">
