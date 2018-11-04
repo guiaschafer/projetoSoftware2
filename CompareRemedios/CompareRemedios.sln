@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareRemedios.Portal", "CompareRemedios.Portal\CompareRemedios.Portal.csproj", "{B072B92D-DE1F-488E-9DFB-60EEA9DA1B62}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareRemedios.Dominio", "CompareRemedios.Dominio\CompareRemedios.Dominio.csproj", "{6BC57245-2E42-4D2F-9EB6-917D6B82D545}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareRemedios.Portal.Framework", "CompareRemedios.Portal.Framework\CompareRemedios.Portal.Framework.csproj", "{FC1DCECF-C66F-4FA9-B5BC-DBD42C91C4D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareRemedios.Dominio.Framework", "ConsoleApp1\CompareRemedios.Dominio.Framework.csproj", "{B97F1136-0921-4FA8-978C-BAE3FBFBBDC0}"
@@ -17,14 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B072B92D-DE1F-488E-9DFB-60EEA9DA1B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B072B92D-DE1F-488E-9DFB-60EEA9DA1B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B072B92D-DE1F-488E-9DFB-60EEA9DA1B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B072B92D-DE1F-488E-9DFB-60EEA9DA1B62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6BC57245-2E42-4D2F-9EB6-917D6B82D545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BC57245-2E42-4D2F-9EB6-917D6B82D545}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BC57245-2E42-4D2F-9EB6-917D6B82D545}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BC57245-2E42-4D2F-9EB6-917D6B82D545}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC1DCECF-C66F-4FA9-B5BC-DBD42C91C4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC1DCECF-C66F-4FA9-B5BC-DBD42C91C4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC1DCECF-C66F-4FA9-B5BC-DBD42C91C4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
