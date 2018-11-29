@@ -7,6 +7,8 @@ namespace CompareRemedios.Dominio.Entity.Maps
     {
         public FarmarciaMap()
         {
+            HasKey(p => p.Id);
+
             Property(f => f.NomeFantasia)
                 .HasColumnName("NomeFantasia")
                 .HasMaxLength(40)
