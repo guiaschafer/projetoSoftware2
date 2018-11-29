@@ -1,0 +1,40 @@
+﻿@model CompareRemedios.Dominio.Entidades.Produto
+@{
+    ViewBag.Title = "Cadastrar Produto";
+}
+
+
+<h2>ViewBag.Title</h2>
+
+@using (Html.BeginForm("Cadastrar", "Farmacia", FormMethod.Post, new { novalidate = "" }))
+{
+
+
+
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Descrição *</label>
+            @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome -->
+    @*<div class="form-group">
+        <label class="control-label col-md-2">Fármacia</label>
+        <div class="col-md-4">
+            @Html.DropDownListFor(x => x.IdFarmacia, ViewBag.Perfis as IEnumerable<SelectListItem>,
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdFarmacia, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    <div class="row">
+        <div class="form-group visible-xs col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block">
+                <span class="glyphicon glyphicon-ok"></span>
+                &nbsp;Salvar
+            </button>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,78 @@
+﻿@model CompareRemedios.Dominio.Entidades.Farmacia
+@{
+    /**/
+
+    ViewBag.Title = "Cadastrar Fármacia";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        @Html.ValidationSummary()
+    </div> <!-- Mensagem de Erro -->
+}
+
+@using (Html.BeginForm("Salvar", "Farmacia", FormMethod.Post, new { novalidate = "" }))
+{
+
+
+
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Nome *</label>
+            @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome -->
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Endereço *</label>
+            @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+        </div> <!-- Sobrenome -->
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Bairro *</label>
+            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+        </div> <!-- Sobrenome -->
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Número *</label>
+            @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+        </div> <!-- Sobrenome -->
+    </div> <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">CEP *</label>
+            @Html.EditorFor(model => model.CEP, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
+        </div> <!-- Sobrenome -->
+    </div> <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Cidade *</label>
+            @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+        </div> <!-- Sobrenome -->
+    </div> <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Estado *</label>
+            @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+        </div> <!-- Sobrenome -->
+    </div>
+
+    <div class="row">
+        
+            <button type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok"></span>
+                &nbsp;Salvar
+            </button>
+        
+    </div>
+}

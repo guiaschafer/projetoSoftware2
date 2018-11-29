@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompareRemedios.Dominio.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

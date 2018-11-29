@@ -1,0 +1,189 @@
+@import 'variaveis.scss';
+
+@mixin menu-tema() {
+    background-color: $pastel-jequiti;
+    color: $verde-texto;
+}
+
+.navbar-inverse {
+    @include menu-tema;
+    border: 0;
+    border-bottom: 1px solid $pastel-jequiti;
+
+    .dropdown-menu {
+        background-color: $branco-jequiti;
+        color: $verde-texto;
+        border: 0;
+        border-radius: 0;
+
+        li {
+            margin-bottom: 1px;
+        }
+    }
+
+    .navbar-nav {
+        a .caret,
+        a:hover .caret,
+        a:focus .caret,
+        > .open > a .caret,
+        > .open > a:hover .caret,
+        > .open > a:focus .caret {
+            border-top-color: $verde-texto;
+            border-bottom-color: $verde-texto;
+        }
+
+        > .open > a,
+        > .open > a:hover,
+        > .open > a:focus {
+            background-color: $branco-jequiti;
+            color: $verde-texto;
+        }
+    }
+
+    .navbar-brand {
+        padding: 5px 5px;
+        height: 45px;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:active,
+    .navbar-brand:focus,
+    .navbar-nav > li > a,
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:active,
+    .navbar-nav > li > a:focus {
+        color: $verde-texto;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .navbar-collapse, .navbar-form {
+        border: 0;
+    }
+
+    .navbar-toggle,
+    .navbar-toggle:hover,
+    .navbar-toggle:focus {
+        background-color: #8b915c;
+        border: 0;
+        outline: none;
+    }
+
+    .nav > li > a,
+    .dropdown-menu > li > a:focus,
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a,
+    .dropdown-menu > li {
+        /*border-bottom: 3px solid transparent;*/
+    }
+
+    .nav li,
+    .nav > li > a:focus,
+    .nav > li > a:hover,
+    .nav .open > a,
+    .nav .open > a:focus,
+    .nav .open > a:hover,
+    .dropdown-menu > li > a:focus,
+    .dropdown-menu > li > a:hover {
+        /*border-bottom: 3px solid transparent;*/
+    }
+
+    .dropdown-menu {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    @mixin menu-ativo() {
+        color: $branco-jequiti !important;
+        background-color: #8b915c !important;
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,.14), rgba(255,255,255,.14));
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,.14), rgba(255,255,255,.14));
+        background-image: -o-linear-gradient(top, rgba(0,0,0,.14), rgba(255,255,255,.14));
+        background-image: -ms-linear-gradient(top, rgba(0,0,0,.14), rgba(255,255,255,.14));
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(255,255,255,.14));
+    }
+
+    @mixin menu-texto-style {
+        color: $verde-texto !important;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .navbar-right {
+        li {
+            > a {
+                color: $verde-texto !important;
+            }
+        }
+
+        li.open {
+            .dropdown-menu {
+                a {
+                    @include menu-texto-style;
+                }
+
+                a:hover {
+                    @include menu-ativo;
+                }
+            }
+        }
+    }
+
+    .nav:not(.navbar-right) {
+        li {
+            border-color: $branco-jequiti;
+            margin-left: 1px;
+
+            > a {
+                background-color: $branco-jequiti !important;
+                @include menu-texto-style;
+
+                &:hover, &:focus {
+                    @include menu-ativo;
+
+                    .caret {
+                        border-top-color: $branco-jequiti;
+                        border-bottom-color: $branco-jequiti;
+                    }
+                }
+            }
+        }
+
+        li.active {
+            > a {
+                @include menu-ativo;
+
+                .caret {
+                    border-top-color: $branco-jequiti;
+                    border-bottom-color: $branco-jequiti;
+                }
+            }
+        }
+
+        ul.dropdown-menu {
+            li {
+                a {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .menu-jequiti {
+        margin: 0 10px !important;
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    .menu-jequiti .nav:not(.navbar-right) li > a {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 10px;
+    }
+}

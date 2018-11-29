@@ -1,17 +1,16 @@
 ﻿using CompareRemedios.Dominio.Entidades;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Data.Entity.ModelConfiguration;
 
 namespace CompareRemedios.Dominio.Entity.Maps
 {
-    public class PrecoMap : IEntityTypeConfiguration<Preco>
+    public class PrecoMap : EntityTypeConfiguration<Preco>
     {
-        public void Configure(EntityTypeBuilder<Preco> builder)
+        public PrecoMap()
         {
-            builder.HasKey(p => p.Id);
+            HasKey(p => p.Id);
+            ToTable("PRECO");
+
         }
+
     }
 }

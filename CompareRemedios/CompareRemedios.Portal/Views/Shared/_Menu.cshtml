@@ -17,7 +17,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
 
-                <li class="menu-header">
+                @*<li class="menu-header">
                     <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
                        aria-expanded="false" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-th"></span> Módulos<span class="caret"></span>
@@ -37,49 +37,48 @@
                         </li>
 
                     </ul>
-                </li>
+                </li>*@
 
                 <li menu-header">
                     <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
                        aria-expanded="false" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user"></span> Cliente<span class="caret"></span>
+                        <span class="glyphicon glyphicon-user"></span> Fármacias<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
 
                         <li>
-                            @Html.ActionLink("Novo", "Cadastrar", "Cliente", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Pesquisar", "Pesquisar", "Farmacia")
                         </li>
 
-                        <li>
-                            @Html.ActionLink("Pesquisar", "Index", "Cliente", new { Area = "Administrativo" }, null)
-                        </li>
-                        <li>
-                            @Html.ActionLink("Black List", "Pesquisar", "BlackList", new { Area = "Administrativo" }, null)
-                        </li>
+
+                        @*<li>
+            @Html.ActionLink("Pesquisar", "Index", "Cliente", new { Area = "Administrativo" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Black List", "Pesquisar", "BlackList", new { Area = "Administrativo" }, null)
+        </li>*@
                     </ul>
                 </li>
 
                 <li class="menu-header">
                     <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
                        aria-expanded="false" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-file"></span> Carnês<span class="caret"></span>
+                        <span class="glyphicon glyphicon-file"></span> Produtos<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            @Html.ActionLink("Pesquisa", "Index", "Carne", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Pesquisar", "Pesquisar", "Produto")
                         </li>
 
                         <li>
-                            @Html.ActionLink("Séries", "Series", "Carne", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Solicitar Ajuste Preços", "SolicitarAjuste", "Preco")
                         </li>
-                        <li>
-                            @Html.ActionLink("Incinerar", "Incinerar", "Carne", new { Area = "Administrativo" }, null)
-                        </li>
+                        
 
                     </ul>
                 </li>
 
-                <li class="menu-header">
+                @*<li class="menu-header">
                     <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
                        aria-expanded="false" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-th-list"></span> BI<span class="caret"></span>
@@ -103,7 +102,7 @@
                                 new { Area = "Administrativo" }, null)
                         </li>
                     </ul>
-                </li>
+                </li>*@
 
                 <li class="menu-header">
                     <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
@@ -113,26 +112,26 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            @Html.ActionLink("Usuário", "Index", "Usuario", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Fármacias", "Cadastrar", "Farmacia")
                         </li>
                         <li>
-                            @Html.ActionLink("Parâmetros", "Index", "Parametros", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Remédios", "Cadastrar", "Produto")
                         </li>
                         <li>
-                            @Html.ActionLink("Motivos Cancelamento", "MotivoCancelamento", "MotivosCancelamento", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Atualizar Preços", "AprovarAjuste","Preco")
                         </li>
 
                         <li>
-                            @Html.ActionLink("Motivos Black List", "MotivoBlackList", "MotivosBlackList", new { Area = "Administrativo" }, null)
+                            @Html.ActionLink("Usuários", "Cadastrar", "Usuario")
                         </li>
 
-                        <li>
-                            @Html.ActionLink("Prazo Entrega", "Index", "PrazoEntrega", new { Area = "Administrativo" }, null)
-                        </li>
+                        @*<li>
+            @Html.ActionLink("Prazo Entrega", "Index", "PrazoEntrega", new { Area = "Administrativo" }, null)
+        </li>*@
                     </ul>
                 </li>
 
-                <li class=" menu-header">
+                @*<li class=" menu-header">
                     <a href="javascript:void(0)" class="dropdown-toggle active" role="button" aria-haspopup="true"
                        aria-expanded="false" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-list-alt"></span> Relatórios<span class="caret"></span>
@@ -186,7 +185,7 @@
                         </li>
 
                     </ul>
-                </li>
+                </li>*@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -10,6 +10,7 @@ namespace CompareRemedios.Dominio.Entidades
         public string User { get; set; }
         public string NomeCompleto { get; set; }
         public string Senha { get; set; }
+        public virtual ICollection<Perfil> Perfis { get; set; }
 
     }
 }

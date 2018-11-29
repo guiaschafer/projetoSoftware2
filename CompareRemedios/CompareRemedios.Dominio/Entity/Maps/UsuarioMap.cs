@@ -1,17 +1,16 @@
 ﻿using CompareRemedios.Dominio.Entidades;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Data.Entity.ModelConfiguration;
 
 namespace CompareRemedios.Dominio.Entity.Maps
 {
-    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    public class UsuarioMap : EntityTypeConfiguration<Usuario>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public UsuarioMap()
         {
-            builder.HasKey(u => u.Id);
+            HasKey(u => u.Id);
+            ToTable("USUARIO");
+
         }
+
     }
 }

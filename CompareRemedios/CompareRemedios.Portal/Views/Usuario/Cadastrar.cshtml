@@ -1,0 +1,54 @@
+﻿@model CompareRemedios.Dominio.Entidades.Usuario
+@{
+    ViewBag.Title = "Cadastrar Usuário";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Cadastrar", "Farmacia", FormMethod.Post, new { novalidate = "" }))
+{
+
+
+
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Nome *</label>
+            @Html.EditorFor(model => model.NomeCompleto, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.NomeCompleto, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome --> 
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Usuário *</label>
+            @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome --> 
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Senha *</label>
+            @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome --> 
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Confirmar Senha *</label>
+            @Html.Password("Confirmar")
+            @Html.ValidationMessageFor(model => model.NomeCompleto, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome -->  
+
+    <div class="row">
+        <div class="form-group visible-xs col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block">
+                <span class="glyphicon glyphicon-ok"></span>
+                &nbsp;Salvar
+            </button>
+        </div>
+    </div>
+}
+
+
+
