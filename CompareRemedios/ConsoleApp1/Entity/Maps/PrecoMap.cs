@@ -8,6 +8,8 @@ namespace CompareRemedios.Dominio.Entity.Maps
         public PrecoMap()
         {
             HasKey(p => p.Id);
+            ToTable("PRECO");
+
         }
 
     }

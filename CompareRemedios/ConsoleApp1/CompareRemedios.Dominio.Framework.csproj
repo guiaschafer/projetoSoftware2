@@ -53,17 +53,28 @@
     <Compile Include="Entidades\Preco.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entity\ContextoInicializador.cs" />
     <Compile Include="Entity\DataBaseContext.cs" />
-    <Compile Include="Entity\Maps\FarmarciaMap.cs" />
+    <Compile Include="Entity\Maps\FarmaciaMap.cs" />
     <Compile Include="Entity\Maps\PrecoMap.cs" />
     <Compile Include="Entity\Maps\ProdutoMap.cs" />
     <Compile Include="Entity\Maps\UsuarioMap.cs" />
+    <Compile Include="Entity\Migrations\201811222210568_Initial.cs" />
+    <Compile Include="Entity\Migrations\201811222210568_Initial.Designer.cs">
+      <DependentUpon>201811222210568_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entity\Migrations\201811222210568_Initial.resx">
+      <DependentUpon>201811222210568_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

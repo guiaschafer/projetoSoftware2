@@ -9,7 +9,7 @@ namespace CompareRemedios.Portal.Framework.Controllers
     public class FarmaciaController : Controller
     {
         // GET: Farmacia
-        public ActionResult Index()
+        public ActionResult Cadastrar()
         {
             return View();
         }

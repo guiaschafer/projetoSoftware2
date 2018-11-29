@@ -3,14 +3,13 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CompareRemedios.Dominio.Entity.Maps
 {
-    public class UsuarioMap : EntityTypeConfiguration<Usuario>
+    public class FarmaciaMap : EntityTypeConfiguration<Farmacia>
     {
-        public UsuarioMap()
+        public FarmaciaMap()
         {
-            HasKey(u => u.Id);
-            ToTable("USUARIO");
-
+            HasKey(p => p.Id);
+            ToTable("FARMACIA");
+            
         }
-
     }
 }

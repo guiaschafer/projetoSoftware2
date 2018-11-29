@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace CompareRemedios.Portal.Framework.Controllers
 {
-    public class UsuarioController : Controller
+    public class ProdutoController : Controller
     {
-        // GET: Usuario
+        // GET: Produto
         public ActionResult Cadastrar()
         {
             return View();
         }
-        public ActionResult Pesquisar()
+
+        public ActionResult Aprovar()
         {
             return View();
         }

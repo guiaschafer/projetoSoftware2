@@ -9,7 +9,12 @@ namespace CompareRemedios.Portal.Framework.Controllers
     public class PrecoController : Controller
     {
         // GET: Preco
-        public ActionResult Index()
+        public ActionResult AprovarAjuste()
+        {
+            return View();
+        }
+
+        public ActionResult SolicitarAjuste()
         {
             return View();
         }

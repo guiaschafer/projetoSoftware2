@@ -1,4 +1,5 @@
 ﻿    using CompareRemedios.Dominio.Entidades;
+using CompareRemedios.Dominio.Entity.Maps;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,6 +18,15 @@ namespace ConsoleApp1.Entity
 
         public DataBaseContext() : base()
         {
+
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new FarmaciaMap());
+            modelBuilder.Configurations.Add(new PrecoMap());
+            modelBuilder.Configurations.Add(new ProdutoMap());
+            modelBuilder.Configurations.Add(new UsuarioMap());
 
         }
     }
