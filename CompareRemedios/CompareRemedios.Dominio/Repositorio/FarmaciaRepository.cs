@@ -21,7 +21,12 @@ namespace CompareRemedios.Dominio.Repositorio
 
         }
 
-        public List<Farmacia> Obter()
+        public List<Farmacia> ObterPorNome(string nome)
+        {
+            return context.Farmacias.Where(f => f.NomeFantasia.ToUpper().Contains(nome.ToUpper())).ToList();
+        }
+
+        public List<Farmacia> ObterTodos()
         {
             var x = context.Farmacias.ToList();
             return x;

@@ -14,7 +14,7 @@
             .SetWidth(30)
             .RenderValueAs(d =>
                 @<b>
-                    @Html.ActionLink("Editar", "Editar")
+                    @Html.ActionLink("Detalhes", "Detalhes", new { Id = d.Id})
                 </b>);
 
     /* Adding "OrderID" column: */

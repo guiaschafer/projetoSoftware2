@@ -1,0 +1,25 @@
+﻿@model CompareRemedios.Dominio.Dtos.DetalheProdutoDto
+@{
+    ViewBag.Title = Model.Descricao;
+}
+
+<div class="page-header">
+    <div class="btn-toolbar pull-right">
+        <a class="btn btn-default" title="Voltar Página Anteior" href="@ViewData["paginaAnterior"]">
+            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+        </a>
+    </div>
+    <h3>@ViewBag.Title</h3>
+</div>
+
+<div class="form-horizontal">
+    @*<img src="@imagePath" alt="Sample Image" width="300px" />*@
+    <div class="form-group">
+        @Html.Label("Nome", new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-4">
+            <p class="form-control-static">@Html.DisplayFor(model => model.Descricao)</p>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Precos", Model.Precos)

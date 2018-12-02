@@ -28,25 +28,25 @@
     <div class="row">
         <div class="form-group col-xs-12 col-md-6">
             <label class="control-label">Senha *</label>
-            @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @type="password", @class = "form-control", @maxlength = "100" } })
             @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
         </div> <!-- Nome -->
     </div> <!-- Nome --> 
     <div class="row">
         <div class="form-group col-xs-12 col-md-6">
             <label class="control-label">Confirmar Senha *</label>
-            @Html.Password("Confirmar")
+            @Html.Editor("Confirmar", new { htmlAttributes = new { @type = "password", @class = "form-control", @maxlength = "100" } })
             @Html.ValidationMessageFor(model => model.NomeCompleto, "", new { @class = "text-danger" })
         </div> <!-- Nome -->
     </div> <!-- Nome -->  
 
     <div class="row">
-        <div class="form-group visible-xs col-xs-12">
-            <button type="submit" class="btn btn-primary btn-block">
+        <div class="pull-right text-right col-md-2 col-xs-12 ">
+            <button type="submit" class="btn btn-primary col-xs-12">
                 <span class="glyphicon glyphicon-ok"></span>
                 &nbsp;Salvar
             </button>
-        </div>
+        </div> <!-- Botão de Ação-->
     </div>
 }
 

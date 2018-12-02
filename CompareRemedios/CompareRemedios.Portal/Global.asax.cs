@@ -12,6 +12,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
+using CompareRemedios.Dominio.Map;
 
 namespace CompareRemedios.Portal
 {
@@ -23,6 +24,7 @@ namespace CompareRemedios.Portal
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AutoMapConfig.Register();
             var container = new Container();
 
             container.Register<IFarmaciaRepository, FarmaciaRepository>();

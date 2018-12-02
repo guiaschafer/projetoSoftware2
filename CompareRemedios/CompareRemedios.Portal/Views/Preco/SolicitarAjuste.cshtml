@@ -1,7 +1,49 @@
-﻿
+﻿@model CompareRemedios.Dominio.Dtos.PrecoDto
 @{
-    ViewBag.Title = "SolicitarAjuste";
+    ViewBag.Title = "Solicitar Ajuste Preço";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/preco")
 }
 
-<h2>Solicitar Ajuste</h2>
 
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("SalvarSolicitarAjuste", "Preco", FormMethod.Post, new { novalidate = "" }))
+{
+    @Html.HiddenFor(p => p.Id);
+
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Remédio</label>
+            @Html.DropDownListFor(x => x.IdProduto, ViewBag.Produtos as IEnumerable<SelectListItem>,
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdFarmacia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Fármacia</label>
+            @Html.DropDownListFor(x => x.IdFarmacia, ViewBag.Farmacias as IEnumerable<SelectListItem>,
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdFarmacia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Preço *</label>
+            @Html.EditorFor(model => model.Preco, new { htmlAttributes = new { @class = "form-control", @maxlength = "100", @type = "number", @min = "0", @step = "0.01", @value = "0" } })
+            @Html.ValidationMessageFor(model => model.Preco, "", new { @class = "text-danger" })
+        </div> <!-- Nome -->
+    </div> <!-- Nome -->
+    <div class="row">
+        <div class="pull-right text-right col-md-2 col-xs-12 ">
+            <button type="submit" class="btn btn-primary col-xs-12">
+                <span class="glyphicon glyphicon-ok"></span>
+                &nbsp;Salvar
+            </button>
+        </div> <!-- Botão de Ação-->
+    </div>
+
+}

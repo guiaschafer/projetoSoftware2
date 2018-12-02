@@ -10,5 +10,8 @@ namespace CompareRemedios.Dominio.IRepositorios
     public interface IProdutoRepository
     {
         void Cadastrar(Produto prod);
+        List<Produto> ObterTodos();
+        Produto Obter(int id);
+        List<Produto> ObterPorNome(string nome);
     }
 }

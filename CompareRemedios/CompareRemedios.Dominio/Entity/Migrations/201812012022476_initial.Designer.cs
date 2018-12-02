@@ -13,7 +13,7 @@ namespace CompareRemedios.Dominio.Entity.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811292233208_initial"; }
+            get { return "201812012022476_initial"; }
         }
         
         string IMigrationMetadata.Source

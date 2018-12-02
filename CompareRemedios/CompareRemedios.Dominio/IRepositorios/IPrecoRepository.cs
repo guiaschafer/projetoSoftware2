@@ -1,4 +1,5 @@
-﻿using CompareRemedios.Dominio.Entidades;
+﻿using CompareRemedios.Dominio.Dtos;
+using CompareRemedios.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace CompareRemedios.Dominio.IRepositorios
 {
     public interface IPrecoRepository
     {
-        void Cadastrar(Preco preco);
+        void SolicitarAjuste(Preco preco);
+        void Aprovar(int id);
+        List<PrecoDto> ObterTodosParaAprovacao();
+        List<PrecoDto> ObterPrecosPorProduto(int idProduto);
+        List<PrecoDto> ObterPrecosPorFarmacia(int idFarmacia);
     }
 }

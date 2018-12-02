@@ -1,4 +1,5 @@
-﻿using CompareRemedios.Dominio.Entidades;
+﻿using CompareRemedios.Dominio.Dtos;
+using CompareRemedios.Dominio.Entidades;
 using CompareRemedios.Dominio.IRepositorios;
 using CompareRemedios.Dominio.Repositorio;
 using System;
@@ -12,10 +13,13 @@ namespace CompareRemedios.Portal.Framework.Controllers
     public class FarmaciaController : Controller
     {
         public IFarmaciaRepository farmaciaRepositorio;
+        public IPrecoRepository precoRepository;
 
-        public FarmaciaController(IFarmaciaRepository farm)
+        public FarmaciaController(IFarmaciaRepository farm,
+            IPrecoRepository precoRepository)
         {
             farmaciaRepositorio = farm;
+            this.precoRepository = precoRepository;
         }
         // GET: Farmacia
         public ActionResult Cadastrar()
@@ -25,13 +29,13 @@ namespace CompareRemedios.Portal.Framework.Controllers
 
         public ActionResult Editar(string id)
         {
-            var f = farmaciaRepositorio.Obter(1);
+            var f = farmaciaRepositorio.Obter(Int32.Parse(id));
             return View("Cadastrar", f);
         }
 
-        public ActionResult PesquisarFarmacia()
+        public ActionResult PesquisarFarmacia(string nome)
         {
-            return PartialView("_Farmacias", farmaciaRepositorio.Obter());
+            return PartialView("_Farmacias", farmaciaRepositorio.ObterPorNome(nome));
         }
 
 
@@ -52,6 +56,16 @@ namespace CompareRemedios.Portal.Framework.Controllers
         public ActionResult Pesquisar()
         {
             return View();
+        }
+
+        public ActionResult Detalhes(int id)
+        {
+            var farmacia = farmaciaRepositorio.Obter(id);
+            var detalhes = new DetalhesFarmaciaDto();
+            detalhes.Id = id;
+            detalhes.NomeFantasia = farmacia.NomeFantasia;
+            detalhes.Produtos = precoRepository.ObterPrecosPorFarmacia(id);
+            return View(detalhes);
         }
     }
 }

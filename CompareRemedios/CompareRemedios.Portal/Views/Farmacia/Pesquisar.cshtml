@@ -14,32 +14,33 @@
     }, new
     {
         @class = "form-inline",
-        @novalidate = "novalidate"
     }))
     {
-        <div class="form-inline">
-            <div class="form-group">
-                <label class="control-label">Fármacia *</label><br />
-                @Html.Editor("farmacia", new
+
+        <div class="form-group col-xs-12 col-sm-3">
+            <label for="cpf">Fármacia</label>
+            @Html.Editor("nome", new
+       {
+           htmlAttributes = new
            {
-               htmlAttributes = new
-               {
-                   @class = "form-control only-number xs-width-full",
-                   @maxlength = "3",
-                   @style = "width:50px;"
-               }
-           })
-
-                <div class="form-group">
-                    <label class="d-block hidden-xs">&nbsp;</label>
-                    <button id="btnPesquisar" type="submit" class="btn btn-primary m-left-15 xs-m-0 xs-width-full">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar
-                    </button>
-                </div>
-            </div>
+               @class = "form-control",
+               @maxlength = "20",
+           }
+       })
         </div>
-    }
-</div> <!-- Resultado da Pesquisa-->
 
+        <div class="form-group col-xs-12 col-sm-6">
+            <label class="d-block hidden-xs">&nbsp;</label>
+            <button id="btnPesquisar" type="submit" class="btn btn-primary m-left-15 xs-m-0 xs-width-full">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar
+            </button>
+        </div>
+
+
+    }
+</div>
+
+<br />
+<br />
 <div id="pesquisa">
 </div> <!-- Resultado da Pesquisa-->

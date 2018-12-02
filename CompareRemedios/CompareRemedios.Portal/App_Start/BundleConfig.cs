@@ -24,12 +24,29 @@ namespace CompareRemedios.Portal
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/menu.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap/bundle")
+                .Include("~/Content/bootstrap.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery-ajax")
                 .Include("~/Scripts/jquery.unobtrusive-ajax.js")
                 .Include("~/Scripts/jquery.validate.js")
                 .Include("~/Scripts/jquery.validate.unobtrusive.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/preco")
+            .Include("~/Scripts/preco.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/modernizr")
+                .Include("~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Scripts/Inicio")
+        .Include("~/Scripts/Inicio.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/Styles/Inicio")
+              .Include("~/Content/Inicio.css"));
+
         }
     }
 }

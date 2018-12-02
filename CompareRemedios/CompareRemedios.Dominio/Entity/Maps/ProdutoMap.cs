@@ -9,6 +9,7 @@ namespace CompareRemedios.Dominio.Entity.Maps
         {
             HasKey(p => p.Id);
             ToTable("PRODUTO");
+            
 
         }
 

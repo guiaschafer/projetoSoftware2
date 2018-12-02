@@ -10,8 +10,8 @@ namespace CompareRemedios.Dominio.IRepositorios
     public interface IFarmaciaRepository
     {
         void Inserir(Farmacia farmacia);
-        List<Farmacia> Obter();
-
+        List<Farmacia> ObterTodos();
         Farmacia Obter(int id);
+        List<Farmacia> ObterPorNome(string nome);
     }
 }

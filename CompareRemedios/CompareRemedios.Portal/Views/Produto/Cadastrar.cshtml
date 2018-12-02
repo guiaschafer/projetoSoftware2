@@ -1,12 +1,12 @@
-﻿@model CompareRemedios.Dominio.Entidades.Produto
+﻿@model CompareRemedios.Dominio.Dtos.ProdutoDto
 @{
     ViewBag.Title = "Cadastrar Produto";
 }
 
 
-<h2>ViewBag.Title</h2>
+<h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Cadastrar", "Farmacia", FormMethod.Post, new { novalidate = "" }))
+@using (Html.BeginForm("Salvar", "Produto", FormMethod.Post, new { novalidate = "" }))
 {
 
 
@@ -18,22 +18,21 @@
             @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
         </div> <!-- Nome -->
     </div> <!-- Nome -->
-    @*<div class="form-group">
-        <label class="control-label col-md-2">Fármacia</label>
-        <div class="col-md-4">
-            @Html.DropDownListFor(x => x.IdFarmacia, ViewBag.Perfis as IEnumerable<SelectListItem>,
+    @*<div class="row">
+        <div class="form-group col-xs-12 col-md-6">
+            <label class="control-label">Fármacia</label>
+            @Html.DropDownListFor(x => x.IdFarmacia, ViewBag.Farmacias as IEnumerable<SelectListItem>,
            new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.IdFarmacia, "", new { @class = "text-danger" })
         </div>
     </div>*@
-
     <div class="row">
-        <div class="form-group visible-xs col-xs-12">
-            <button type="submit" class="btn btn-primary btn-block">
+        <div class="pull-right text-right col-md-2 col-xs-12 ">
+            <button type="submit" class="btn btn-primary col-xs-12">
                 <span class="glyphicon glyphicon-ok"></span>
                 &nbsp;Salvar
             </button>
-        </div>
+        </div> <!-- Botão de Ação-->
     </div>
 }
 

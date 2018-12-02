@@ -27,15 +27,16 @@ namespace CompareRemedios.Dominio.Entity.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        IdFarmacia = c.Int(nullable: false),
+                        IdProduto = c.Int(nullable: false),
                         Valor = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Farmacia_Id = c.Int(),
-                        Produto_Id = c.Int(),
+                        Status = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.FARMACIA", t => t.Farmacia_Id)
-                .ForeignKey("dbo.PRODUTO", t => t.Produto_Id)
-                .Index(t => t.Farmacia_Id)
-                .Index(t => t.Produto_Id);
+                .ForeignKey("dbo.FARMACIA", t => t.IdFarmacia, cascadeDelete: true)
+                .ForeignKey("dbo.PRODUTO", t => t.IdProduto, cascadeDelete: true)
+                .Index(t => t.IdFarmacia)
+                .Index(t => t.IdProduto);
             
             CreateTable(
                 "dbo.PRODUTO",
@@ -43,12 +44,8 @@ namespace CompareRemedios.Dominio.Entity.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Descricao = c.String(),
-                        IdFarmacia = c.Int(nullable: false),
-                        Farmacia_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.FARMACIA", t => t.Farmacia_Id)
-                .Index(t => t.Farmacia_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.USUARIO",
@@ -78,13 +75,11 @@ namespace CompareRemedios.Dominio.Entity.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Perfils", "Usuario_Id", "dbo.USUARIO");
-            DropForeignKey("dbo.PRECO", "Produto_Id", "dbo.PRODUTO");
-            DropForeignKey("dbo.PRODUTO", "Farmacia_Id", "dbo.FARMACIA");
-            DropForeignKey("dbo.PRECO", "Farmacia_Id", "dbo.FARMACIA");
+            DropForeignKey("dbo.PRECO", "IdProduto", "dbo.PRODUTO");
+            DropForeignKey("dbo.PRECO", "IdFarmacia", "dbo.FARMACIA");
             DropIndex("dbo.Perfils", new[] { "Usuario_Id" });
-            DropIndex("dbo.PRODUTO", new[] { "Farmacia_Id" });
-            DropIndex("dbo.PRECO", new[] { "Produto_Id" });
-            DropIndex("dbo.PRECO", new[] { "Farmacia_Id" });
+            DropIndex("dbo.PRECO", new[] { "IdProduto" });
+            DropIndex("dbo.PRECO", new[] { "IdFarmacia" });
             DropTable("dbo.Perfils");
             DropTable("dbo.USUARIO");
             DropTable("dbo.PRODUTO");

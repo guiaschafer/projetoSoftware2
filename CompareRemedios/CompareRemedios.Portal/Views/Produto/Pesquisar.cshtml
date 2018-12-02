@@ -1,7 +1,44 @@
-﻿
+﻿@Scripts.Render("~/bundles/jquery-ajax")
 @{
-    ViewBag.Title = "Pesquisar";
+    ViewBag.Title = "Pesquisar Remédios";
 }
 
 <h2>Pesquisar</h2>
 
+<div class="row">
+    @using (Ajax.BeginForm("PesquisarProdutos", "Produto", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        UpdateTargetId = "pesquisa"
+    }, new
+    {
+        @class = "form-inline",
+    }))
+    {
+
+        <div class="form-group col-xs-12 col-sm-3">
+            <label for="cpf">Nome Remédio</label>
+            @Html.Editor("nome", new
+       {
+           htmlAttributes = new
+           {
+               @class = "form-control",
+               @maxlength = "20",
+           }
+       })
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-6">
+            <label class="d-block hidden-xs">&nbsp;</label>
+            <button type="submit" class="btn btn-primary col-xs-12 col-sm-4" id="btnPesquisar" style="vertical-align:bottom">
+                <span class="glyphicon glyphicon-search"></span>&nbsp;Pesquisar
+            </button>
+        </div> <!-- Botão de ação -->
+
+    }
+</div>
+<br />
+<br />
+<div id="pesquisa">
+</div> <!-- Resultado da Pesquisa-->

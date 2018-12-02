@@ -9,6 +9,8 @@ namespace CompareRemedios.Dominio.Entity.Maps
         {
             HasKey(p => p.Id);
             ToTable("PRECO");
+            HasRequired(p => p.Farmacia).WithMany().HasForeignKey(p => p.IdFarmacia);
+            HasRequired(p => p.Produto).WithMany().HasForeignKey(p => p.IdProduto);
 
         }
 
