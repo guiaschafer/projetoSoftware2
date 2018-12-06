@@ -33,6 +33,11 @@ namespace CompareRemedios.Dominio.Repositorio
 
         public List<Produto> ObterPorNome(string nome)
         {
+            if (string.IsNullOrEmpty(nome))
+            {
+                return context.Produtos.ToList();
+
+            }
             return context.Produtos.Where(f => f.Descricao.ToUpper().Contains(nome.ToUpper())).ToList();
         }
     }

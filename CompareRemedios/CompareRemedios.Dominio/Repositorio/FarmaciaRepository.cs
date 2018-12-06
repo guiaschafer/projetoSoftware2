@@ -23,6 +23,9 @@ namespace CompareRemedios.Dominio.Repositorio
 
         public List<Farmacia> ObterPorNome(string nome)
         {
+            if(string.IsNullOrEmpty(nome))
+                return context.Farmacias.ToList();
+
             return context.Farmacias.Where(f => f.NomeFantasia.ToUpper().Contains(nome.ToUpper())).ToList();
         }
 
